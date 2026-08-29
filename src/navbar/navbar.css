@@ -1,0 +1,42 @@
+nav {
+    margin: 1rem 1.5rem;
+    padding: 0 28px;
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(27, 16, 43, 0.88);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(139, 95, 191, 0.08);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
+}
+
+.nav-sec-1{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-sec-2{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 2rem;
+}
+
+.nav-sec-1 img{
+    height: 5rem;
+    width: auto;
+}
