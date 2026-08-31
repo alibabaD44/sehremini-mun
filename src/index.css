@@ -20,6 +20,10 @@ h1,h3,h2, a {
     transition: 0.3s ease;
 }
 
+a{
+  cursor: pointer;
+}
+
 
 
 @keyframes typing {

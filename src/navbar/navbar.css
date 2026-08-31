@@ -1,92 +1,190 @@
-nav { 
-    margin: 1rem 1.5rem; 
-    padding: 0 2.6rem; 
-    height: 6rem; 
- 
-    display: flex; 
-    align-items: center; 
- 
-    /* Başlangıçta şeffaf */
-    background: transparent; 
- 
-    border: 1px solid transparent; 
-    border-radius: 18px; 
- 
-    box-shadow: none; 
- 
-    backdrop-filter: blur(0);
-    -webkit-backdrop-filter: blur(0);
-     
-    position: fixed; 
-    width: 97%; 
-    z-index: 999;
+nav {
+  margin: 1rem 1.5rem;
+  padding: 0 2.6rem;
 
-    transition:
-        background 0.4s ease,
-        border 0.4s ease,
-        box-shadow 0.4s ease,
-        backdrop-filter 0.4s ease;
+  height: 6rem;
+
+  display: flex;
+  align-items: center;
+
+  /* Başlangıçta şeffaf */
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  box-shadow: none;
+
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+
+  position: fixed;
+  width: 97%;
+  z-index: 999;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.4s ease,
+    border 0.4s ease,
+    box-shadow 0.4s ease,
+    backdrop-filter 0.4s ease;
 }
-
 
 /* Aşağı kaydırınca */
 
 nav.scrolled {
-    background: rgba(27, 16, 43, 0.7); 
- 
-    border: 1px solid var(--border); 
- 
-    box-shadow: 
-        0 12px 10px rgba(0, 0, 0, 0.35), 
-        0 0 10px rgba(139, 95, 191, 0.08); 
- 
-    backdrop-filter: blur(16px); 
-    -webkit-backdrop-filter: blur(16px);
+  background: rgba(27, 16, 43, 0.7);
+
+  border: 1px solid var(--border);
+
+  box-shadow:
+    0 12px 10px rgba(0, 0, 0, 0.35),
+    0 0 10px rgba(139, 95, 191, 0.08);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-.nav-sec-1{
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
+/* NAV SOL */
+
+.nav-sec-1 {
+  width: 30%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
 }
 
-.nav-sec-2{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    gap: 3.5rem;
+/* NAV SAĞ */
+
+.nav-sec-2 {
+  width: 70%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 3.5rem;
 }
+
+/* LOGO */
 
 .nav-sec-1 img {
-    position: relative;
-    height: 6rem;
-    width: auto;
-    display: block;
-    border: none;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    z-index: 2;
+  position: relative;
+
+  height: 6rem;
+  width: auto;
+
+  display: block;
+
+  border: none;
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+
+  z-index: 2;
 }
 
 .nav-sec-1 img:hover {
-    transform: rotate(10deg) scale(1.05);
-    cursor: pointer;
+  transform: rotate(10deg) scale(1.05);
 
-    filter:
-        drop-shadow(0 0 8px rgba(49, 26, 26, 0.45))
-        drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+  cursor: pointer;
+
+  filter: drop-shadow(0 0 8px rgba(49, 26, 26, 0.45))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
 
-.nav-sec-1 h3:hover,.nav-sec-1 h2:hover,.nav-sec-2 a:hover {
-    cursor: pointer;
-    transform: translateY(-2px);
-    text-shadow: 0 2px 15px rgba(185, 138, 217, 0.5);
-    filter:
-        drop-shadow(0 0 8px rgba(255, 255, 255, 0.45))
-        drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+/* SOL TARAFTAKİ YAZILAR */
+
+.nav-sec-1 h3:hover,
+.nav-sec-1 h2:hover {
+  color: #b98bea;
+  transform: translateX(5px);
 }
 
+/* NAVBAR LINKLERİ */
 
+.nav-sec-2 a {
+  position: relative;
+
+  width: fit-content;
+
+  font-size: 15px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.nav-sec-2 a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  background: linear-gradient(90deg, #6a3d91, #b98bea);
+
+  transition: width 0.35s ease;
+}
+
+.nav-sec-2 a:hover {
+  color: #b98bea;
+
+  transform: translateX(5px);
+}
+
+.nav-sec-2 a:hover::after {
+  width: 100%;
+}
+
+/* MOBİL */
+
+@media (max-width: 900px) {
+  nav {
+    margin: 0.8rem;
+    padding: 0 1.5rem;
+
+    width: calc(100% - 1.6rem);
+  }
+
+  .nav-sec-2 {
+    gap: 1.5rem;
+  }
+
+  .nav-sec-2 a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 650px) {
+  nav {
+    padding: 0 1rem;
+  }
+
+  .nav-sec-1 {
+    width: 25%;
+  }
+
+  .nav-sec-2 {
+    width: 75%;
+    gap: 1rem;
+  }
+
+  .nav-sec-1 img {
+    height: 4.5rem;
+  }
+
+  .nav-sec-2 a {
+    font-size: 11px;
+  }
+}
