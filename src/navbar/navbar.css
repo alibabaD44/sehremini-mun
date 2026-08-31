@@ -12,12 +12,14 @@ nav {
     border-radius: 18px;
 
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.35),
-        0 0 40px rgba(139, 95, 191, 0.08);
+        0 12px 10px rgba(0, 0, 0, 0.35),
+        0 0 10px rgba(139, 95, 191, 0.08);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     
+    position: fixed;
+    width: 97%;
 }
 
 .nav-sec-1{
@@ -39,4 +41,11 @@ nav {
 .nav-sec-1 img{
     height: 5rem;
     width: auto;
+}
+
+.nav-sec-1 h3:hover,.nav-sec-1 h2:hover,.nav-sec-2 a:hover {
+    cursor: pointer;
+    color: #B98AD9;
+    transform: translateY(-2px);
+    text-shadow: 0 2px 15px rgba(185, 138, 217, 0.5);
 }

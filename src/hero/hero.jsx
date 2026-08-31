@@ -4,11 +4,13 @@ function Hero(){
     return(
         <>
         <section className='Hero'>
-            <div className='plak-img'>
-                <img className="plak" src="Logo_PLAK.png" alt="" />
+            <div className='Hero-part-1'>
+                <h2>SEHREMINI<br/>MUN'26</h2>
+                <h3>find the world to change to world</h3>
+                <button>Explore</button>
             </div>
-            <div className='hero-text'>
-
+            <div className='Hero-part-2'>
+                <img src="Logo_WHITE.png" alt="" />
             </div>
         </section>
         </>
