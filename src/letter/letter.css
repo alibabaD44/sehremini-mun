@@ -1,0 +1,115 @@
+.letter {
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.letter-background {
+  width: 95%;
+  min-height: 20rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 3rem 5rem;
+
+  background: rgba(27, 16, 43, 0.8);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(139, 95, 191, 0.08);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-sizing: border-box;
+  transition: 0.5s ease all;
+}
+
+.letter-Title {
+  width: 100%;
+  text-align: center;
+}
+
+.letter-Title h1 {
+  margin: 0 0 2rem;
+
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12rem;
+
+  color: white;
+
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.letter-Dec {
+  width: 100%;
+}
+
+.letter-Dec h2 {
+  margin: 0;
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+
+  font-weight: 400;
+
+  text-align: center;
+  word-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.letter-background hr {
+  width: 100%;
+
+  margin: 2rem 0 1.5rem;
+
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.letter-Aut {
+  width: 100%;
+
+  text-align: center;
+}
+
+.letter-Aut h3 {
+  margin: 0;
+
+  font-size: 1.1rem;
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.letter-Aut h3 b {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #6a3d91,
+    #b98bea,
+    #ffffff,
+    #b98bea,
+    #6a3d91
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: purpleGradient 4s ease-in-out infinite;
+}

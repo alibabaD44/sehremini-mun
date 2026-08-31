@@ -1,77 +1,119 @@
 .Hero {
   width: 100%;
-  height: 50rem;
+  height: 40rem;
 
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  position: relative;
+  overflow: hidden;
 }
+
+
+/* VIDEO ARKA PLAN */
+
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background video {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+.background::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(10, 5, 18, 0.4);
+
+  z-index: 1;
+}
+
+
+/* HERO */
 
 .Hero-part-2 {
   width: 60%;
   height: 100%;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Hero-part-1 {
-  width: 40%;
+  width: 45%;
   height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  position: relative;
+  z-index: 2;
 }
 
 .Hero-part-1 h2 {
-  font-size: 5rem;
+  font-size: 6rem;
   margin-bottom: 0;
+  display: block;
+  border: none;
 }
 
 .Hero-part-1 h3 {
-  color: rgb(255, 255, 255, 0.9);
-  margin-right: 6rem;
+  color: rgb(255, 255, 255, 0.7);
+  margin-right: 11rem;
 }
 
 .Hero-part-1 button {
-    margin-bottom: 10rem;
-  margin-right: 6rem;
-  margin-top: 1rem;
-  border-radius: 20px;
+    margin-bottom: 4rem;
+    margin-right: 11rem;
+    margin-top: 1rem;
+    border-radius: 20px;
 
     padding: 0.9rem 2.2rem;
 
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255);
     backdrop-filter: blur(10px);
 
-    color: white;
+    color: black;
     font-family: "Bricolage Grotesque", sans-serif;
     font-size: 1rem;
     font-weight: 500;
 
     cursor: pointer;
 
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: 0.3s ease all;
 }
 
 .Hero-part-1 button:hover {
     transform: translateY(-4px);
 
-    background: rgba(139, 95, 191, 0.25);
-    border-color: rgba(180, 140, 255, 0.7);
-
     box-shadow:
         0 8px 25px rgba(139, 95, 191, 0.25),
         0 0 20px rgba(139, 95, 191, 0.15);
-}
 
-.Hero-part-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    filter:
+        drop-shadow(0 0 8px rgba(49, 26, 26, 0.45))
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }

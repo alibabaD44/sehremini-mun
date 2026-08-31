@@ -1,25 +1,47 @@
-nav {
-    margin: 1rem 1.5rem;
-    padding: 0 28px;
-    height: 5rem;
+nav { 
+    margin: 1rem 1.5rem; 
+    padding: 0 2.6rem; 
+    height: 6rem; 
+ 
+    display: flex; 
+    align-items: center; 
+ 
+    /* Başlangıçta şeffaf */
+    background: transparent; 
+ 
+    border: 1px solid transparent; 
+    border-radius: 18px; 
+ 
+    box-shadow: none; 
+ 
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+     
+    position: fixed; 
+    width: 97%; 
+    z-index: 999;
 
-    display: flex;
-    align-items: center;
+    transition:
+        background 0.4s ease,
+        border 0.4s ease,
+        box-shadow 0.4s ease,
+        backdrop-filter 0.4s ease;
+}
 
-    background: rgba(27, 16, 43, 0.88);
 
-    border: 1px solid var(--border);
-    border-radius: 18px;
+/* Aşağı kaydırınca */
 
-    box-shadow:
-        0 12px 10px rgba(0, 0, 0, 0.35),
-        0 0 10px rgba(139, 95, 191, 0.08);
-
-    backdrop-filter: blur(16px);
+nav.scrolled {
+    background: rgba(27, 16, 43, 0.7); 
+ 
+    border: 1px solid var(--border); 
+ 
+    box-shadow: 
+        0 12px 10px rgba(0, 0, 0, 0.35), 
+        0 0 10px rgba(139, 95, 191, 0.08); 
+ 
+    backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px);
-    
-    position: fixed;
-    width: 97%;
 }
 
 .nav-sec-1{
@@ -27,6 +49,7 @@ nav {
     height: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .nav-sec-2{
@@ -35,17 +58,35 @@ nav {
     display: flex;
     align-items: center;
     justify-content: right;
-    gap: 2rem;
+    gap: 3.5rem;
 }
 
-.nav-sec-1 img{
-    height: 5rem;
+.nav-sec-1 img {
+    position: relative;
+    height: 6rem;
     width: auto;
+    display: block;
+    border: none;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    z-index: 2;
+}
+
+.nav-sec-1 img:hover {
+    transform: rotate(10deg) scale(1.05);
+    cursor: pointer;
+
+    filter:
+        drop-shadow(0 0 8px rgba(49, 26, 26, 0.45))
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
 
 .nav-sec-1 h3:hover,.nav-sec-1 h2:hover,.nav-sec-2 a:hover {
     cursor: pointer;
-    color: #B98AD9;
     transform: translateY(-2px);
     text-shadow: 0 2px 15px rgba(185, 138, 217, 0.5);
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.45))
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
+
+
