@@ -1,48 +1,117 @@
 * {
-  box-sizing: border-box;
-  font-family: "Bricolage Grotesque";
+    box-sizing: border-box;
+    font-family: "Bricolage Grotesque";
 }
 
+html,
 body {
     margin: 0;
+    padding: 0;
+
     min-height: 100vh;
 
     background:
-
-        
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
         #12091F;
 
+    background-size: 70px 70px;
+
+    color: white;
 }
 
-h1,h3,h2, a {
+body {
+    position: relative;
+}
+
+
+/* MOR GLOW */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(139, 95, 191, 0.15);
+
+    filter: blur(140px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* React Root */
+
+#root {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+}
+
+
+/* Headings & Links */
+
+h1,
+h2,
+h3,
+a {
     text-decoration: none;
+
     color: white;
+
     transition: 0.3s ease;
 }
 
-a{
-  cursor: pointer;
+a {
+    cursor: pointer;
 }
 
 
+/* Typing Animation */
 
 @keyframes typing {
-  0% {
-    width: 0;
-    border-right-color: white;
-  }
 
-  90% {
-    border-right-color: white;
-  }
+    0% {
+        width: 0;
+        border-right-color: white;
+    }
 
-  100% {
-    width: 9ch;
-    border-right-color: transparent;
-  }
+    90% {
+        border-right-color: white;
+    }
+
+    100% {
+        width: 9ch;
+        border-right-color: transparent;
+    }
+
 }
 
+
+/* Purple Gradient Animation */
+
 @keyframes purpleGradient {
+
     0% {
         background-position: 0% 50%;
     }
@@ -54,4 +123,5 @@ a{
     100% {
         background-position: 0% 50%;
     }
+
 }

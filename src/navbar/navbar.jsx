@@ -1,5 +1,6 @@
 import './navbar.css'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
 
@@ -22,16 +23,18 @@ function Navbar() {
             <nav className={scrolled ? 'scrolled' : ''}>
 
                 <div className='nav-sec-1'>
-                    <img src="Logo_WHITE.png" alt="" />
+                    <Link to="/">
+                        <img src="Logo_WHITE.png" alt="SEHREMINIMUN" />
+                    </Link>
                 </div>
 
                 <div className='nav-sec-2'>
-                    <a href="">Applications</a>
-                    <a href="">Our Team</a>
-                    <a href="">Committees</a>
-                    <a href="">Conference</a>
-                    <a href="">Schedule</a>
-                    <a href="">FAQ</a>
+                    <Link to="/applications">Applications</Link>
+                    <Link to="/our-team">Our Team</Link>
+                    <Link to="/committees">Committees</Link>
+                    <Link to="/conference">Conference</Link>
+                    <Link to="/schedule">Schedule</Link>
+                    <Link to="/faq">FAQ</Link>
                 </div>
 
             </nav>

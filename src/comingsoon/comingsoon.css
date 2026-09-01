@@ -1,0 +1,167 @@
+.coming-soon {
+  width: 100%;
+  min-height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+.coming-content {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+}
+
+.coming-content h1 {
+  margin: 0;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: clamp(5rem, 13vw, 11rem);
+
+  line-height: 0.8;
+
+  font-weight: 700;
+
+  letter-spacing: -0.07em;
+
+  color: transparent;
+
+  background: linear-gradient(
+    90deg,
+    #6a3d91,
+    #b98bea,
+    #ffffff,
+    #b98bea,
+    #6a3d91
+  );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: purpleGradient 4s ease-in-out infinite;
+}
+
+/* Back To Home Button */
+
+.home-button {
+  display: inline-block;
+
+  margin-top: 4rem;
+
+  padding: 0.9rem 2.2rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255);
+
+  backdrop-filter: blur(10px);
+
+  color: black;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: 0.3s ease all;
+}
+
+.home-button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 25px rgba(139, 95, 191, 0.25),
+    0 0 20px rgba(139, 95, 191, 0.15);
+
+  filter: drop-shadow(0 0 8px rgba(49, 26, 26, 0.45))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
+
+/* Decorative Corners */
+
+.coming-corner {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Top Left */
+
+.top-left {
+  top: 35px;
+  left: 35px;
+
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Bottom Right */
+
+.bottom-right {
+  right: 35px;
+  bottom: 35px;
+
+  border-left: none;
+  border-top: none;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .coming-soon {
+    background-size: 45px 45px;
+  }
+
+  .coming-glow {
+    width: 350px;
+    height: 350px;
+  }
+
+  .coming-content h1 {
+    font-size: clamp(4.5rem, 22vw, 8rem);
+  }
+
+  .home-button {
+    margin-top: 3rem;
+
+    padding: 0.8rem 1.8rem;
+
+    font-size: 0.85rem;
+  }
+
+  .coming-corner {
+    width: 60px;
+    height: 60px;
+  }
+
+  .top-left {
+    top: 20px;
+    left: 20px;
+  }
+
+  .bottom-right {
+    right: 20px;
+    bottom: 20px;
+  }
+}
