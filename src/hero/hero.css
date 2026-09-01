@@ -89,8 +89,7 @@
     border-radius: 20px;
 
     padding: 0.9rem 2.2rem;
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: none;
     border-radius: 50px;
 
     background: rgba(255, 255, 255);
@@ -104,6 +103,10 @@
     cursor: pointer;
 
     transition: 0.3s ease all;
+}
+
+.Hero-part-1 button a{
+  color: black !important;
 }
 
 .Hero-part-1 button:hover {

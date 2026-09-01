@@ -19,7 +19,7 @@ function Letter() {
                     </div>
                     <hr />
                     <div className='letter-Aut'>
-                        <h3><b>Yiğit Ali Oluk</b><br />IT leader</h3>
+                        <h3><b>Random Name</b><br />Mun Ceo</h3>
                     </div>
                 </div>
             </section>
