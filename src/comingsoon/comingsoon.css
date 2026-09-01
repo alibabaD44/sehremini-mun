@@ -1,6 +1,7 @@
 .coming-soon {
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
 
   position: relative;
   overflow: hidden;
@@ -10,12 +11,17 @@
   justify-content: center;
 
   color: white;
+
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .coming-content {
   position: relative;
-
   z-index: 2;
+
+  width: 100%;
+  max-width: 1400px;
 
   text-align: center;
 }
@@ -65,7 +71,7 @@
 
   border-radius: 50px;
 
-  background: rgba(255, 255, 255);
+  background: rgba(255, 255, 255, 1);
 
   backdrop-filter: blur(10px);
 
@@ -95,8 +101,6 @@
     drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
 
-/* Decorative Corners */
-
 .coming-corner {
   position: absolute;
 
@@ -104,9 +108,9 @@
   height: 100px;
 
   border: 1px solid rgba(255, 255, 255, 0.12);
-}
 
-/* Top Left */
+  pointer-events: none;
+}
 
 .top-left {
   top: 35px;
@@ -116,8 +120,6 @@
   border-bottom: none;
 }
 
-/* Bottom Right */
-
 .bottom-right {
   right: 35px;
   bottom: 35px;
@@ -126,20 +128,54 @@
   border-top: none;
 }
 
-/* Responsive */
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .coming-soon {
-    background-size: 45px 45px;
-  }
-
-  .coming-glow {
-    width: 350px;
-    height: 350px;
+    padding: 2rem;
   }
 
   .coming-content h1 {
-    font-size: clamp(4.5rem, 22vw, 8rem);
+    font-size: clamp(5rem, 15vw, 9rem);
+  }
+
+  .home-button {
+    margin-top: 3.5rem;
+  }
+
+  .coming-corner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .top-left {
+    top: 25px;
+    left: 25px;
+  }
+
+  .bottom-right {
+    right: 25px;
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coming-soon {
+    min-height: 100svh;
+
+    padding: 1.5rem;
+
+    align-items: center;
+  }
+
+  .coming-content {
+    width: 100%;
+  }
+
+  .coming-content h1 {
+    font-size: clamp(4rem, 21vw, 7rem);
+
+    line-height: 0.85;
+
+    letter-spacing: -0.06em;
   }
 
   .home-button {
@@ -147,7 +183,7 @@
 
     padding: 0.8rem 1.8rem;
 
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .coming-corner {
@@ -163,5 +199,61 @@
   .bottom-right {
     right: 20px;
     bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon {
+    padding: 1rem;
+  }
+
+  .coming-content h1 {
+    font-size: clamp(3.2rem, 20vw, 5.5rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.055em;
+  }
+
+  .home-button {
+    margin-top: 2.5rem;
+
+    padding: 0.75rem 1.5rem;
+
+    font-size: 0.85rem;
+  }
+
+  .coming-corner {
+    width: 45px;
+    height: 45px;
+  }
+
+  .top-left {
+    top: 15px;
+    left: 15px;
+  }
+
+  .bottom-right {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .coming-content h1 {
+    font-size: 3.3rem;
+  }
+
+  .home-button {
+    margin-top: 2rem;
+
+    padding: 0.7rem 1.3rem;
+
+    font-size: 0.8rem;
+  }
+
+  .coming-corner {
+    width: 35px;
+    height: 35px;
   }
 }

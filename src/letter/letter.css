@@ -114,3 +114,174 @@
 
   animation: purpleGradient 4s ease-in-out infinite;
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+
+  .letter {
+    height: auto;
+    min-height: 40rem;
+
+    padding: 4rem 1.5rem;
+  }
+
+  .letter-background {
+    width: 92%;
+
+    padding: 3rem 3.5rem;
+  }
+
+  .letter-Title h1 {
+    font-size: 2.2rem;
+  }
+
+  .letter-Dec h2 {
+    font-size: 1.05rem;
+  }
+
+  .letter-Aut h3 {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .letter {
+    height: auto;
+    min-height: 38rem;
+
+    padding: 3rem 1rem;
+  }
+
+  .letter-background {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 2.5rem 2rem;
+
+    border-radius: 20px;
+  }
+
+  .letter-Title h1 {
+    margin-bottom: 1.5rem;
+
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+
+    letter-spacing: 0.08rem;
+
+    line-height: 1.2;
+  }
+
+  .letter-Dec h2 {
+    font-size: 0.95rem;
+
+    line-height: 1.65;
+
+    word-spacing: 2px;
+  }
+
+  .letter-background hr {
+    margin: 1.7rem 0 1.3rem;
+  }
+
+  .letter-Aut h3 {
+    font-size: 0.95rem;
+
+    line-height: 1.5;
+  }
+
+  .letter-Aut h3 b {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .letter {
+    min-height: 0;
+
+    padding: 2.5rem 0.8rem;
+  }
+
+  .letter-background {
+    width: 100%;
+
+    padding: 2rem 1.3rem;
+
+    border-radius: 18px;
+
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.3),
+      0 0 25px rgba(139, 95, 191, 0.08);
+  }
+
+  .letter-Title h1 {
+    margin-bottom: 1.3rem;
+
+    font-size: clamp(1.5rem, 7vw, 1.9rem);
+
+    letter-spacing: 0.05rem;
+  }
+
+  .letter-Dec h2 {
+    font-size: 0.85rem;
+
+    line-height: 1.65;
+
+    word-spacing: 1px;
+  }
+
+  .letter-background hr {
+    margin: 1.5rem 0 1.2rem;
+  }
+
+  .letter-Aut h3 {
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+  }
+
+  .letter-Aut h3 b {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+
+  .letter {
+    padding: 2rem 0.6rem;
+  }
+
+  .letter-background {
+    padding: 1.7rem 1rem;
+
+    border-radius: 16px;
+  }
+
+  .letter-Title h1 {
+    font-size: 1.4rem;
+
+    letter-spacing: 0.04rem;
+  }
+
+  .letter-Dec h2 {
+    font-size: 0.8rem;
+
+    line-height: 1.6;
+  }
+
+  .letter-Aut h3 {
+    font-size: 0.8rem;
+  }
+
+  .letter-Aut h3 b {
+    font-size: 0.85rem;
+  }
+}
