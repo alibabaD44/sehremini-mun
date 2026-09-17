@@ -27,14 +27,38 @@ function Footer() {
             <div className="footer-3">
                 <h3>Contact</h3>
 
-                <a 
-                    href="https://www.instagram.com/sehreminimun26/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="instagram"
-                >
-                    <i className="fa-brands fa-instagram"></i>
-                </a>
+                <div className="social-icons">
+
+                    <a
+                        href="https://www.instagram.com/sehreminimun26/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="instagram"
+                    >
+                        <i className="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="https://www.tiktok.com/@sehreminimun"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="tiktok"
+                    >
+                        <i className="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/company/%C5%9Fehremini-model-united-nations-club/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="linkedin"
+                    >
+                        <i className="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    
+
+                </div>
             </div>
 
 
