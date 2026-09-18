@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-/* VIDEO ARKA PLAN */
+/* VIDEO */
 
 .background {
   position: absolute;
@@ -27,12 +27,26 @@
   display: block;
 }
 
+/* VIDEO KARARTMA + ALT GRADIENT */
+
 .background::after {
   content: "";
+
   position: absolute;
   inset: 0;
-  background: rgba(10, 5, 18, 0.4);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 9, 31, 0) 45%,
+    rgba(18, 9, 31, 0.08) 55%,
+    rgba(18, 9, 31, 0.25) 65%,
+    rgba(18, 9, 31, 0.55) 76%,
+    rgba(18, 9, 31, 0.82) 88%,
+    #12091f 100%
+  );
+
   z-index: 1;
+  pointer-events: none;
 }
 
 /* HERO */
@@ -45,22 +59,39 @@
   justify-content: center;
   position: relative;
   z-index: 2;
-  box-sizing: border-box;
 }
 
 .Hero-part-1 {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
   position: relative;
   z-index: 2;
+  padding: 0 0 2.5rem;
+  box-sizing: border-box;
 }
 
-/* BAŞLIK */
+/* ANA İÇERİK */
+
+.hero-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+/* TITLE */
 
 .Hero-part-1 h2 {
   font-size: clamp(5rem, 9vw, 9rem);
@@ -69,87 +100,22 @@
   font-weight: 800;
   letter-spacing: -2px;
   color: white;
-  white-space: nowrap;
 }
 
 /* HASHTAG */
 
 .Hero-part-1 h3 {
   color: rgba(255, 255, 255, 0.75);
-  margin: 1.8rem 0 0;
+  margin: 1.5rem 0 0;
   font-size: 1.15rem;
   font-weight: 400;
   letter-spacing: 0.04em;
 }
 
-/* SAYAÇ */
-
-.countdown {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-
-.countdown-item {
-  width: 125px;
-  height: 110px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.countdown-item:hover {
-  transform: translateY(-7px);
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.55);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.25),
-    0 0 20px rgba(255, 255, 255, 0.08);
-}
-
-.countdown-item strong {
-  font-size: 3.2rem;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  color: white;
-}
-
-.countdown-item span {
-  margin-top: 0.55rem;
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-/* TARİH */
-
-.hero-date {
-  margin-top: 1rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-/* BUTON */
+/* BUTTON */
 
 .Hero-part-1 button {
-  margin-top: 1.6rem;
+  margin-top: 1.5rem;
   padding: 0.95rem 2.5rem;
   border: none;
   border-radius: 50px;
@@ -174,39 +140,98 @@
     0 0 20px rgba(255, 255, 255, 0.15);
 }
 
-/* ========================================= */
-/* 1200px */
-/* ========================================= */
+/* COUNTDOWN */
 
-@media (max-width: 1200px) {
-  .Hero {
-    height: 42rem;
-  }
+.countdown {
+  position: relative;
 
-  .background video {
-    height: 42rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .Hero-part-1 h2 {
-    font-size: 6.5rem;
-  }
+  gap: 1.2rem;
+  margin-top: auto;
+  padding: 1rem 2rem;
+}
+/* TIMER ITEM */
 
-  .countdown {
-    gap: 0.9rem;
-  }
+.countdown-item {
+  position: relative;
 
-  .countdown-item {
-    width: 115px;
-    height: 105px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  .countdown-item strong {
-    font-size: 3rem;
-  }
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+/* TIMER HOVER */
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+}
+
+.countdown-item:hover::before {
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+  height: 55px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  filter: blur(25px);
+
+  border-radius: 50%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: -1;
+}
+
+/* TIMER NUMBERS */
+
+.countdown-item strong {
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: white;
+
+  transition: text-shadow 0.3s ease;
+}
+
+/* TIMER LABEL */
+
+.countdown-item span {
+  margin-top: 0.5rem;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.55);
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.countdown-item:hover span {
+  color: rgba(255, 255, 255, 0.9);
+
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* ========================================= */
-/* 992px - TABLET */
+/* TABLET */
 /* ========================================= */
 
 @media (max-width: 992px) {
@@ -218,308 +243,99 @@
     height: 43rem;
   }
 
-  .Hero-content {
-    padding: 0 4%;
+  .Hero-part-1 {
+    padding: 0 5% 2.5rem;
   }
 
   .Hero-part-1 h2 {
-    font-size: 5.8rem;
+    font-size: 8rem;
   }
 
   .Hero-part-1 h3 {
-    font-size: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .countdown {
-    gap: 0.7rem;
-    margin-top: 2rem;
-  }
-
-  .countdown-item {
-    width: 100px;
-    height: 92px;
-    border-radius: 16px;
-  }
-
-  .countdown-item strong {
-    font-size: 2.6rem;
-  }
-
-  .countdown-item span {
-    font-size: 0.5rem;
+    font-size: 1.3rem;
+    margin-top: 1.7rem;
   }
 
   .Hero-part-1 button {
-    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    padding: 1.05rem 2.8rem;
+    margin-top: 1.7rem;
+  }
+
+  .countdown {
+    gap: 1.3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .countdown-item strong {
+    font-size: 3.5rem;
+  }
+
+  .countdown-item span {
+    font-size: 0.65rem;
   }
 }
 
 /* ========================================= */
-/* 768px - TABLET / TELEFON */
+/* TELEFON */
 /* ========================================= */
 
 @media (max-width: 768px) {
   .Hero {
-    height: 44rem;
-  }
-
-  .background video {
-    height: 44rem;
-    object-position: center;
-  }
-
-  .Hero-content {
-    padding: 0 5%;
-  }
-
-  .Hero-part-1 h2 {
-    font-size: clamp(3.8rem, 12vw, 5.5rem);
-    letter-spacing: -2px;
-  }
-
-  .Hero-part-1 h3 {
-    margin-top: 1.3rem;
-    font-size: 0.9rem;
-    max-width: 90%;
-  }
-
-  .countdown {
-    gap: 0.55rem;
-    margin-top: 1.8rem;
-  }
-
-  .countdown-item {
-    width: 82px;
-    height: 82px;
-    border-radius: 14px;
-  }
-
-  .countdown-item strong {
-    font-size: 2.15rem;
-  }
-
-  .countdown-item span {
-    margin-top: 0.4rem;
-    font-size: 0.42rem;
-    letter-spacing: 0.1em;
-  }
-
-  .Hero-part-1 button {
-    margin-top: 1.4rem;
-    padding: 0.85rem 2.2rem;
-    font-size: 0.95rem;
-  }
-}
-
-/* ========================================= */
-/* 600px */
-/* ========================================= */
-
-@media (max-width: 600px) {
-  .Hero {
     height: 42rem;
   }
 
   .background video {
     height: 42rem;
-  }
-
-  .Hero-content {
-    padding: 0 4%;
-  }
-
-  .Hero-part-1 h2 {
-    font-size: clamp(3rem, 11vw, 4.2rem);
-    letter-spacing: -1.5px;
-  }
-
-  .Hero-part-1 h3 {
-    font-size: 0.82rem;
-    margin-top: 1.2rem;
-  }
-
-  .countdown {
-    gap: 0.4rem;
-    margin-top: 1.6rem;
-  }
-
-  .countdown-item {
-    width: 72px;
-    height: 76px;
-    border-radius: 13px;
-  }
-
-  .countdown-item strong {
-    font-size: 1.8rem;
-  }
-
-  .countdown-item span {
-    font-size: 0.36rem;
-    letter-spacing: 0.08em;
-  }
-
-  .Hero-part-1 button {
-    margin-top: 1.3rem;
-    padding: 0.8rem 2rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ========================================= */
-/* 500px - TELEFON */
-/* ========================================= */
-
-@media (max-width: 500px) {
-  .Hero {
-    height: 41rem;
-  }
-
-  .background video {
-    height: 41rem;
     object-position: center;
   }
 
-  .Hero-content {
-    padding: 0 3%;
+  .Hero-part-1 {
+    padding: 0 4% 2rem;
+  }
+
+  .hero-main {
+    top: 47%;
+    transform: translate(-50%, -50%);
   }
 
   .Hero-part-1 h2 {
-    font-size: clamp(2.5rem, 10.5vw, 3.5rem);
-    line-height: 0.9;
-    letter-spacing: -1.5px;
-    white-space: nowrap;
+    font-size: clamp(5rem, 18vw, 7rem);
+    line-height: 0.88;
   }
 
   .Hero-part-1 h3 {
-    max-width: 300px;
-    margin-top: 1rem;
-    font-size: 0.72rem;
-    line-height: 1.4;
-  }
-
-  .countdown {
-    gap: 0.3rem;
     margin-top: 1.5rem;
-  }
-
-  .countdown-item {
-    width: 64px;
-    height: 70px;
-    border-radius: 12px;
-  }
-
-  .countdown-item strong {
-    font-size: 1.55rem;
-  }
-
-  .countdown-item span {
-    margin-top: 0.35rem;
-    font-size: 0.32rem;
-    letter-spacing: 0.06em;
+    font-size: 1.05rem;
   }
 
   .Hero-part-1 button {
-    margin-top: 1.2rem;
-    padding: 0.75rem 1.8rem;
-    font-size: 0.85rem;
-  }
-
-  .hero-date {
-    font-size: 0.45rem;
-    letter-spacing: 0.1em;
-  }
-}
-
-/* ========================================= */
-/* 400px */
-/* ========================================= */
-
-@media (max-width: 400px) {
-  .Hero {
-    height: 40rem;
-  }
-
-  .background video {
-    height: 40rem;
-  }
-
-  .Hero-part-1 h2 {
-    font-size: 2.35rem;
-    letter-spacing: -1.2px;
-  }
-
-  .Hero-part-1 h3 {
-    max-width: 260px;
-    font-size: 0.68rem;
+    margin-top: 1.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
   }
 
   .countdown {
-    gap: 0.25rem;
-  }
-
-  .countdown-item {
-    width: 58px;
-    height: 64px;
-    border-radius: 11px;
+    gap: 0.8rem;
+    padding: 1rem 0.5rem;
   }
 
   .countdown-item strong {
-    font-size: 1.35rem;
+    font-size: 2.8rem;
   }
 
   .countdown-item span {
-    font-size: 0.28rem;
-    letter-spacing: 0.05em;
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
   }
 
-  .Hero-part-1 button {
-    margin-top: 1.1rem;
-    padding: 0.7rem 1.6rem;
-    font-size: 0.8rem;
-  }
-}
-
-/* ========================================= */
-/* 350px - KÜÇÜK TELEFON */
-/* ========================================= */
-
-@media (max-width: 350px) {
-  .Hero {
-    height: 38rem;
+  .countdown::before {
+    width: 350px;
+    height: 100px;
   }
 
-  .background video {
-    height: 38rem;
-  }
-
-  .Hero-part-1 h2 {
-    font-size: 2.05rem;
-  }
-
-  .Hero-part-1 h3 {
-    font-size: 0.62rem;
-  }
-
-  .countdown {
-    gap: 0.2rem;
-  }
-
-  .countdown-item {
-    width: 52px;
-    height: 60px;
-  }
-
-  .countdown-item strong {
-    font-size: 1.2rem;
-  }
-
-  .countdown-item span {
-    font-size: 0.25rem;
-  }
-
-  .Hero-part-1 button {
-    padding: 0.65rem 1.4rem;
-    font-size: 0.75rem;
+  .countdown-item:hover::before {
+    width: 80px;
+    height: 50px;
   }
 }

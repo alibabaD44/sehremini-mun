@@ -53,10 +53,24 @@ function Hero() {
 
                 <div className='Hero-part-1'>
 
-                    <h2>
-                        SEHREMINI <br />
-                        MUN'26
-                    </h2>
+                    <div className="hero-main">
+
+                        <h2>
+                            SEHREMINI <br />
+                            MUN'26
+                        </h2>
+
+                        <h3>
+                            #findthewordtochangetheworld
+                        </h3>
+
+                        <button>
+                            <Link to="/committees">
+                                <b>Explore</b>
+                            </Link>
+                        </button>
+
+                    </div>
 
                     <div className='countdown'>
 
@@ -89,12 +103,6 @@ function Hero() {
                         </div>
 
                     </div>
-
-                    <button>
-                        <Link to="/committees">
-                            <b>Explore</b>
-                        </Link>
-                    </button>
 
                 </div>
 
