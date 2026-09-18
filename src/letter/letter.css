@@ -17,14 +17,17 @@
 
   padding: 3rem 5rem;
 
-  background: rgba(27, 16, 43, 0.8);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  /* KART YAPISI */
+  position: relative;
+  overflow: hidden;
   border-radius: 24px;
 
+  /* Eski ::after'ın arka plan rengi buraya taşındı */
+  background: rgba(27, 16, 43, 0.92);
+
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(139, 95, 191, 0.08);
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(139, 95, 191, 0.2);
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -32,6 +35,71 @@
   box-sizing: border-box;
   transition: 0.5s ease all;
 }
+
+
+/* =========================
+   DÖNEN IŞIK BORDER EFEKTİ
+========================= */
+
+/* Açı değerini animasyonla değiştirebilmek için */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.letter-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;               /* Border kalınlığı */
+  border-radius: inherit;     /* Kartın radius'unu otomatik alır */
+  pointer-events: none;
+  z-index: 1;
+
+  /* Dönen ışığın renk kümesi */
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent,
+    rgba(185, 139, 234, 0.3),
+    #b98bea,
+    #ffffff,
+    #b98bea,
+    transparent 40%
+  );
+
+  /* Sadece 2px'lik halkayı göster, içini kes */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+
+  animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+/* Kart içeriğini border katmanının üstüne çıkarır */
+.letter-Title,
+.letter-Dec,
+.letter-background hr,
+.letter-Aut {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* =========================
+   TITLE
+========================= */
 
 .letter-Title {
   width: 100%;
@@ -51,6 +119,11 @@
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
 }
 
+
+/* =========================
+   DESCRIPTION
+========================= */
+
 .letter-Dec {
   width: 100%;
 }
@@ -69,6 +142,11 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+
+/* =========================
+   HR
+========================= */
+
 .letter-background hr {
   width: 100%;
 
@@ -78,9 +156,15 @@
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+
+/* =========================
+   AUTHORS
+========================= */
+
 .letter-Aut {
   width: 100%;
   gap: 8rem;
+
   display: flex;
   text-align: center;
   align-items: center;
@@ -96,13 +180,13 @@
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.5);
-  
 }
 
 .letter-Aut h3 b {
-  color: rgba(255, 255, 255, 0.9);
   font-size: 1.2rem;
+
   color: transparent;
+
   background: linear-gradient(
     90deg,
     #6a3d91,
@@ -111,12 +195,34 @@
     #b98bea,
     #6a3d91
   );
+
   background-size: 300% 100%;
+
   -webkit-background-clip: text;
   background-clip: text;
 
   animation: purpleGradient 4s ease-in-out infinite;
 }
+
+
+/* =========================
+   PURPLE TEXT
+========================= */
+
+@keyframes purpleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 /* =========================
    RESPONSIVE
@@ -133,7 +239,6 @@
 
   .letter-background {
     width: 92%;
-
     padding: 3rem 3.5rem;
   }
 
@@ -162,7 +267,6 @@
 
   .letter-background {
     width: 100%;
-
     min-height: auto;
 
     padding: 2.5rem 2rem;
@@ -192,7 +296,7 @@
     margin: 1.7rem 0 1.3rem;
   }
 
-  .letter-Aut{
+  .letter-Aut {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -200,7 +304,6 @@
 
   .letter-Aut h3 {
     font-size: 0.95rem;
-
     line-height: 1.5;
   }
 
@@ -214,7 +317,6 @@
 
   .letter {
     min-height: 0;
-
     padding: 2.5rem 0.8rem;
   }
 
@@ -252,7 +354,6 @@
 
   .letter-Aut h3 {
     font-size: 0.85rem;
-
     line-height: 1.5;
   }
 
@@ -270,19 +371,16 @@
 
   .letter-background {
     padding: 1.7rem 1rem;
-
     border-radius: 16px;
   }
 
   .letter-Title h1 {
     font-size: 1.4rem;
-
     letter-spacing: 0.04rem;
   }
 
   .letter-Dec h2 {
     font-size: 0.8rem;
-
     line-height: 1.6;
   }
 
