@@ -19,7 +19,8 @@ function Letter() {
                     </div>
                     <hr />
                     <div className='letter-Aut'>
-                        <h3><b>Emir Mücteba Özsığınan</b><br />Co-Secretary Generals</h3>
+                        <h3><b>Emir Mücteba Özsığınan</b><br />Co-Secretaries General</h3>
+                        <h3><b>Lina Bolgi</b><br />Co-Secretaries General</h3>
                     </div>
                 </div>
             </section>

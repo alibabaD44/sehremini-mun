@@ -80,8 +80,11 @@
 
 .letter-Aut {
   width: 100%;
-
+  gap: 8rem;
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .letter-Aut h3 {
@@ -187,6 +190,12 @@
 
   .letter-background hr {
     margin: 1.7rem 0 1.3rem;
+  }
+
+  .letter-Aut{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .letter-Aut h3 {
