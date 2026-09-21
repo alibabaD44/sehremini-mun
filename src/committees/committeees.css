@@ -1,0 +1,362 @@
+.committees {
+  min-height: 40rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding-top: 7rem;
+
+  overflow: hidden;
+}
+
+.committees-text {
+  text-align: center;
+}
+
+.committees-text h1 {
+  font-size: 6rem;
+  margin-top: 1rem;
+
+  color: transparent;
+
+  background: linear-gradient(
+    90deg,
+    #6a3d91,
+    #b98bea,
+    #ffffff,
+    #b98bea,
+    #6a3d91
+  );
+
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5))
+    drop-shadow(0 0 12px rgba(124, 58, 237, 0.35));
+
+  animation: purpleGradient 4s ease-in-out infinite;
+}
+
+@keyframes purpleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.committees-infos {
+  width: 100%;
+
+  display: flex;
+  align-items: stretch;
+
+  gap: 2rem;
+
+  padding: 2rem 3% 4rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  cursor: grab;
+  touch-action: pan-x;
+
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed transparent;
+}
+
+
+.committees-infos.dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  user-select: none;
+}
+
+.committees-infos::-webkit-scrollbar {
+  height: 7px;
+}
+
+.committees-infos::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.committees-infos::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #6a3d91, #b98bea, #6a3d91);
+
+  border-radius: 20px;
+}
+
+.committees-infos::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #b98bea, #ffffff, #b98bea);
+}
+
+.committees-info {
+  position: relative;
+  flex: 0 0 22rem;
+
+  height: 30rem;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+  cursor: pointer;
+
+  background: #0c0712;
+
+  border: 1px solid rgba(185, 139, 234, 0.35);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.committees-info:hover {
+  transform: translateY(-12px);
+
+  border-color: rgba(185, 139, 234, 0.9);
+
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.35),
+    0 0 40px rgba(124, 58, 237, 0.2);
+}
+
+.committees-info-png {
+  width: 100%;
+  height: 70%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(124, 58, 237, 0.2),
+    transparent 70%
+  );
+}
+
+
+.committees-info-png img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  user-select: none;
+  pointer-events: none;
+
+  transition: transform 0.5s ease;
+}
+
+.committees-info:hover .committees-info-png img {
+  transform: scale(1.08);
+}
+
+
+.committees-info-title {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 1.5rem;
+
+  background: linear-gradient(
+    180deg,
+    rgba(20, 10, 30, 0.95),
+    rgba(10, 5, 15, 1)
+  );
+}
+
+.committees-info-title h2 {
+  margin: 0 0 0.7rem;
+
+  color: #ffffff;
+
+  font-size: 1.35rem;
+
+  line-height: 1.2;
+}
+
+.committees-info-title span {
+  color: #b98bea;
+
+  font-size: 0.9rem;
+
+  transition: color 0.3s ease;
+}
+
+.committees-info:hover .committees-info-title span {
+  color: #ffffff;
+}
+
+
+@media (max-width: 900px) {
+  .committees {
+    min-height: auto;
+
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  .committees-text {
+    margin-bottom: 3rem;
+  }
+
+  .committees-text h1 {
+    font-size: 4rem;
+  }
+
+  .committees-infos {
+    gap: 1.5rem;
+
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .committees-info {
+    flex: 0 0 19rem;
+
+    height: 27rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .committees {
+    min-height: auto;
+
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  .committees-text {
+    margin-bottom: 2rem;
+
+    padding: 0 1rem;
+  }
+
+  .committees-text h1 {
+    font-size: 3rem;
+  }
+
+  .committees-infos {
+    width: 100%;
+
+    gap: 1rem;
+
+    padding: 1.5rem 1.5rem 3rem;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .committees-infos::-webkit-scrollbar {
+    display: none;
+  }
+
+  .committees-info {
+    flex: 0 0 78vw;
+
+    max-width: 20rem;
+
+    height: 25rem;
+
+    border-radius: 20px;
+
+    scroll-snap-align: center;
+  }
+
+  .committees-info-png {
+    height: 65%;
+  }
+
+  .committees-info-title {
+    padding: 1.2rem;
+  }
+
+  .committees-info-title h2 {
+    font-size: 1.15rem;
+  }
+
+  .committees-info-title span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .committees {
+    padding-top: 3rem;
+  }
+
+  .committees-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .committees-info {
+    flex: 0 0 82vw;
+
+    height: 23rem;
+  }
+
+  .committees-info-title h2 {
+    font-size: 1.05rem;
+  }
+}
+
+.committees-info {
+    position: relative;
+}
+
+
+/* =========================
+   INACTIVE OVERLAY
+========================= */
+
+.committees-info.inactive::before {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(80, 80, 80, 0.55);
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    transition: background 0.35s ease;
+}
+
+
+/* Pasif kart hover olduğunda da
+   gri katman biraz koyulaşsın */
+
+.committees-info.inactive:hover::before {
+    background: rgba(60, 60, 60, 0.6);
+}

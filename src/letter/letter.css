@@ -57,7 +57,6 @@
   pointer-events: none;
   z-index: 1;
 
-  /* Dönen ışığın renk kümesi */
   background: conic-gradient(
     from var(--border-angle),
     transparent,
@@ -68,7 +67,6 @@
     transparent 40%
   );
 
-  /* Sadece 2px'lik halkayı göster, içini kes */
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -87,7 +85,6 @@
   }
 }
 
-/* Kart içeriğini border katmanının üstüne çıkarır */
 .letter-Title,
 .letter-Dec,
 .letter-background hr,
@@ -392,3 +389,4 @@
     font-size: 0.85rem;
   }
 }
+
