@@ -59,10 +59,10 @@ function Committees() {
             active: true
         },
         {
-            name: '*************',
-            image: 'soruisareti.png',
-            path: '/committees/ecosoc',
-            active: false
+            name: 'LEGAL',
+            image: 'LEGAL.png',
+            path: '/legal',
+            active: true
         },
         {
             name: '*************',

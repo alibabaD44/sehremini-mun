@@ -5,6 +5,7 @@ import Comingsoon from './comingsoon/comingsoon'
 import Committees from './committees/committees'
 import Ecofin from './committees/ecofin/ecofin'
 import Unwomen from './committees/unwomen/unwomen'
+import Legal from './committees/legal/legal'
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/committees" element={<Committees />} />
                 <Route path="/ecofin" element={<Ecofin />} />
                 <Route path="/unwomen" element={<Unwomen />} />
+                <Route path="/legal" element={<Legal />} />
                 <Route path="/conference" element={<Comingsoon />} />
                 <Route path="/schedule" element={<Comingsoon />} />
                 <Route path="/faq" element={<Comingsoon />} />
