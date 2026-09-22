@@ -65,10 +65,10 @@ function Committees() {
             active: true
         },
         {
-            name: '*************',
-            image: 'soruisareti.png',
-            path: '/committees/human-rights',
-            active: false
+            name: 'UNITED STATES SUPREME COURT',
+            image: 'USSC.png',
+            path: '/ussc',
+            active: true
         },
         {
             name: '*************',
