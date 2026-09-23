@@ -77,6 +77,24 @@ function Committees() {
             active: true
         },
         {
+            name: 'HUNSC',
+            image: 'HUNSC.png',
+            path: '/hunsc',
+            active: true
+        },
+        {
+            name: '*************',
+            image: 'soruisareti.png',
+            path: '/committees/crisis',
+            active: false
+        },
+        {
+            name: '*************',
+            image: 'soruisareti.png',
+            path: '/committees/crisis',
+            active: false
+        },
+        {
             name: '*************',
             image: 'soruisareti.png',
             path: '/committees/crisis',
@@ -109,11 +127,10 @@ function Committees() {
                     {committees.map((committee, index) => (
 
                         <div
-                            className={`committees-info ${
-                                committee.active
+                            className={`committees-info ${committee.active
                                     ? 'active'
                                     : 'inactive'
-                            }`}
+                                }`}
 
                             key={index}
 

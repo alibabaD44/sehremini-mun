@@ -8,6 +8,7 @@ import Unwomen from './committees/unwomen/unwomen'
 import Legal from './committees/legal/legal'
 import Ussc from './committees/ussc/ussc'
 import Hnato from './committees/h-nato/h-nato'
+import Hunsc from './committees/hunsc/hunsc'
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/ussc" element={<Ussc />} />
                 <Route path="/historicalnato" element={<Hnato />} />
+                <Route path="/hunsc" element={<Hunsc />} />
                 <Route path="/conference" element={<Comingsoon />} />
                 <Route path="/schedule" element={<Comingsoon />} />
                 <Route path="/faq" element={<Comingsoon />} />
