@@ -71,10 +71,10 @@ function Committees() {
             active: true
         },
         {
-            name: '*************',
-            image: 'soruisareti.png',
-            path: '/committees/icj',
-            active: false
+            name: 'H-NATO',
+            image: 'NATO.png',
+            path: '/historicalnato',
+            active: true
         },
         {
             name: '*************',
