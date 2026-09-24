@@ -85,7 +85,7 @@ function Committees() {
         {
             name: 'JCC',
             image: 'JCC.png',
-            path: '/committees/jcc',
+            path: '/jcc',
             active: true
         },
         {
