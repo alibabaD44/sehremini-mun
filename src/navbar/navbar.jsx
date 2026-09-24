@@ -65,13 +65,6 @@ function Navbar() {
                 </Link>
 
                 <Link
-                    to="/schedule"
-                    onClick={closeMenu}
-                >
-                    Schedule
-                </Link>
-
-                <Link
                     to="/faq"
                     onClick={closeMenu}
                 >

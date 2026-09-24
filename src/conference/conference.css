@@ -1,0 +1,476 @@
+/* =========================
+   CONFERENCE
+========================= */
+
+.conference {
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.conference-hero {
+  position: relative;
+
+  width: 100%;
+  height: 80vh;
+  min-height: 550px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* HERO IMAGE */
+
+.conference-hero img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  user-select: none;
+  pointer-events: none;
+
+  transform: scale(1.02);
+}
+
+/* =========================
+   HERO OVERLAY
+========================= */
+
+.conference-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 9, 31, 0.15) 0%,
+    rgba(18, 9, 31, 0.25) 40%,
+    rgba(18, 9, 31, 0.65) 70%,
+    rgba(18, 9, 31, 1) 100%
+  );
+
+  z-index: 1;
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.conference-hero-title {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 90%;
+
+  text-align: center;
+
+  margin-top: 5rem;
+}
+
+.conference-hero-title h1 {
+  font-size: 8rem;
+  margin-top: 1rem;
+
+  color: transparent;
+
+  background: linear-gradient(
+    90deg,
+    #6a3d91,
+    #b98bea,
+    #ffffff,
+    #b98bea,
+    #6a3d91
+  );
+
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5))
+    drop-shadow(0 0 12px rgba(124, 58, 237, 0.35));
+
+  animation: purpleGradient 4s ease-in-out infinite;
+}
+
+@keyframes purpleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================
+   VENUE
+========================= */
+
+.conference-venue {
+  width: min(1100px, 86%);
+
+  margin: 0 auto;
+
+  padding: 4rem 0 5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+}
+
+/* =========================
+   VENUE TITLE
+========================= */
+
+.conference-venue-title {
+  margin-bottom: 0.5rem;
+}
+
+.conference-venue-title span {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3rem;
+
+  color: #8f7cff;
+}
+
+.conference-venue-title h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  color: white;
+}
+
+/* MOR LINE */
+
+.conference-venue-title::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+  height: 3px;
+
+  margin-top: 1.5rem;
+
+  background: linear-gradient(90deg, #6f4cff, transparent);
+
+  border-radius: 10px;
+}
+
+/* =========================
+   GOOGLE MAP
+========================= */
+
+.google-map {
+  position: relative;
+
+  width: 100%;
+  height: 30rem;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: #0c0712;
+
+  border: 1px solid rgba(185, 139, 234, 0.35);
+
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.15),
+    0 0 40px rgba(124, 58, 237, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.google-map:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(185, 139, 234, 0.9);
+
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.35),
+    0 0 40px rgba(124, 58, 237, 0.2);
+}
+
+.google-map iframe {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+}
+
+/* =========================
+   ADDRESS
+========================= */
+
+.map-adress {
+  position: relative;
+
+  width: 100%;
+
+  padding: 1.5rem 1.8rem;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(20, 10, 30, 0.95),
+    rgba(10, 5, 15, 1)
+  );
+
+  border: 1px solid rgba(185, 139, 234, 0.35);
+
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.12),
+    0 0 30px rgba(124, 58, 237, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  overflow: hidden;
+}
+
+.map-adress::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    #6a3d91,
+    #b98bea,
+    #ffffff,
+    #b98bea,
+    #6a3d91
+  );
+
+  box-shadow:
+    0 0 10px rgba(185, 139, 234, 0.7),
+    0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+.map-adress:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(185, 139, 234, 0.9);
+
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.3),
+    0 0 40px rgba(124, 58, 237, 0.15);
+}
+
+.map-adress h2 {
+  margin: 0 0 0.5rem;
+
+  color: #ffffff;
+
+  font-size: 1.35rem;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.map-adress h3 {
+  margin: 0;
+
+  color: #b98bea;
+
+  font-size: 0.9rem;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  transition: color 0.3s ease;
+}
+
+.map-adress:hover h3 {
+  color: #ffffff;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .conference-hero {
+    height: 70vh;
+    min-height: 500px;
+  }
+
+  .conference-venue {
+    width: 88%;
+
+    padding: 4rem 0;
+  }
+
+  .conference-venue-title h2 {
+    font-size: 4rem;
+  }
+
+  .google-map {
+    height: 27rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .conference-hero {
+    height: 65vh;
+    min-height: 450px;
+  }
+
+  .conference-hero img {
+    object-position: center;
+  }
+
+  .conference-hero-title {
+    margin-top: 3rem;
+  }
+
+  .conference-hero-title h1 {
+    font-size: clamp(4rem, 20vw, 7rem);
+  }
+
+  .conference-venue {
+    width: 88%;
+
+    padding: 3rem 0;
+
+    gap: 1rem;
+  }
+
+  .conference-venue-title h2 {
+    font-size: 3rem;
+  }
+
+  .conference-venue-title span {
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2rem;
+  }
+
+  .conference-venue-title::after {
+    width: 50px;
+    height: 2px;
+
+    margin-top: 1rem;
+  }
+
+  .google-map {
+    height: 22rem;
+
+    border-radius: 20px;
+  }
+
+  .map-adress {
+    padding: 1.2rem;
+
+    border-radius: 16px;
+  }
+
+  .map-adress h2 {
+    font-size: 1.15rem;
+  }
+
+  .map-adress h3 {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 400px) {
+  .conference-hero {
+    height: 60vh;
+
+    min-height: 400px;
+  }
+
+  .conference-hero-title h1 {
+    font-size: 3.5rem;
+  }
+
+  .conference-venue {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .conference-venue-title h2 {
+    font-size: 2.5rem;
+  }
+
+  .google-map {
+    height: 19rem;
+
+    border-radius: 18px;
+  }
+
+  .map-adress {
+    padding: 1rem;
+  }
+
+  .map-adress h2 {
+    font-size: 1.05rem;
+  }
+
+  .map-adress h3 {
+    font-size: 0.8rem;
+  }
+}

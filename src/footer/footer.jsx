@@ -19,7 +19,6 @@ function Footer() {
                 <Link to="/our-team">Our Team</Link>
                 <Link to="/committees">Committees</Link>
                 <Link to="/conference">Conference</Link>
-                <Link to="/schedule">Schedule</Link>
                 <Link to="/faq">FAQ</Link>
             </div>
 
