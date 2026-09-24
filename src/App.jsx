@@ -11,6 +11,7 @@ import Hnato from './committees/h-nato/h-nato'
 import Hunsc from './committees/hunsc/hunsc'
 import Conference from './conference/conference'
 import Faq from './faq/faq'
+import Jcc from './committees/jcc/jcc'
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/unwomen" element={<Unwomen />} />
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/ussc" element={<Ussc />} />
+                <Route path="/jcc" element={<Jcc />} />
                 <Route path="/historicalnato" element={<Hnato />} />
                 <Route path="/hunsc" element={<Hunsc />} />
                 <Route path="/conference" element={<Conference />} />

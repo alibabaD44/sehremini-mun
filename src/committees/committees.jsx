@@ -83,10 +83,10 @@ function Committees() {
             active: true
         },
         {
-            name: '*************',
-            image: 'soruisareti.png',
-            path: '/committees/crisis',
-            active: false
+            name: 'JCC',
+            image: 'JCC.png',
+            path: '/committees/jcc',
+            active: true
         },
         {
             name: '*************',
