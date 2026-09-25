@@ -89,10 +89,10 @@ function Committees() {
             active: true
         },
         {
-            name: '*************',
-            image: 'soruisareti.png',
-            path: '/committees/crisis',
-            active: false
+            name: 'CABINET OF US',
+            image: 'CABINET.png',
+            path: '/cabinetofus',
+            active: true
         },
         {
             name: '*************',

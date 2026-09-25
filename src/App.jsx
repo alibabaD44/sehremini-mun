@@ -12,6 +12,7 @@ import Hunsc from './committees/hunsc/hunsc'
 import Conference from './conference/conference'
 import Faq from './faq/faq'
 import Jcc from './committees/jcc/jcc'
+import Cabinet from './committees/cabinet/cabinet'
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/historicalnato" element={<Hnato />} />
                 <Route path="/hunsc" element={<Hunsc />} />
                 <Route path="/conference" element={<Conference />} />
+                <Route path="/cabinetofus" element={<Cabinet />} />
                 <Route path="/faq" element={<Faq />} />
             </Routes>
         </>
