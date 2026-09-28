@@ -8,31 +8,31 @@ function Applications() {
         {
             title: 'Individual Delegate',
             description: 'Apply individually and take your place in one of our committees.',
-            fee: '₺1100',
+            fee: '₺1250',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScuOYGUrFNplZwnAbFJ_PUmzR5vhFNc3lkt1Ql2-uSqmhWsig/viewform'
         },
         {
             title: 'Delegation',
             description: 'Register your school delegation and experience the conference together.',
-            fee: '₺1000',
+            fee: '₺1150',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdyXIIThMGyWRuL2A35JwMCbw1U5h5NIcrJ22ssg6jGAwATjA/viewform'
         },
         {
             title: 'Chairboard Member',
             description: 'Lead committee debate and help delegates get the most from the conference.',
-            fee: '₺900',
+            fee: '₺1050',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdjFPgovnxXXlJkicSPoN4OmQmvIjCiJy3RCZi48kw6BH5TwQ/viewform'
         },
         {
             title: 'Admin Member',
             description: 'Join the team that keeps every committee organized and running smoothly.',
-            fee: '₺1000',
+            fee: '₺1150',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScAAHLCsPc5IHpv9VphCwGH10cyBaw3-UArCKfbABGY_ZCg0A/viewform'
         },
         {
             title: 'Press',
             description: 'Capture the conference through photography, video, interviews, and news.',
-            fee: '₺900',
+            fee: '₺1050',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdBI_H7GiXepifhUi7Q4IhX7gBR4sXGmyDdO8MpDObJXS5XNA/viewform'
         }
     ]
