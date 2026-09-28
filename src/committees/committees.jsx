@@ -1,49 +1,11 @@
 import './committeees.css'
 import Navbar from '../navbar/navbar'
 import Footer from '../footer/footer'
-import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Committees() {
 
     const navigate = useNavigate()
-    const sliderRef = useRef(null)
-
-    const isDown = useRef(false)
-    const startX = useRef(0)
-    const scrollLeft = useRef(0)
-
-    const handleMouseDown = (e) => {
-        isDown.current = true
-        sliderRef.current.classList.add('dragging')
-
-        startX.current = e.pageX - sliderRef.current.offsetLeft
-        scrollLeft.current = sliderRef.current.scrollLeft
-    }
-
-    const handleMouseLeave = () => {
-        isDown.current = false
-        sliderRef.current.classList.remove('dragging')
-    }
-
-    const handleMouseUp = () => {
-        isDown.current = false
-        sliderRef.current.classList.remove('dragging')
-    }
-
-    const handleMouseMove = (e) => {
-
-        if (!isDown.current) return
-
-        e.preventDefault()
-
-        const x = e.pageX - sliderRef.current.offsetLeft
-        const walk = (x - startX.current) * 1.5
-
-        sliderRef.current.scrollLeft =
-            scrollLeft.current - walk
-    }
-
 
     const committees = [
         {
@@ -95,13 +57,12 @@ function Committees() {
             active: true
         },
         {
-            name: '*************',
-            image: 'soruisareti.png',
-            path: '/committees/crisis',
-            active: false
+            name: 'FCC',
+            image: 'FCC.png',
+            path: '/fcc',
+            active: true
         }
     ]
-
 
     return (
         <>
@@ -113,27 +74,15 @@ function Committees() {
                     <h1>Committees</h1>
                 </div>
 
-
-                <div
-                    className="committees-infos"
-                    ref={sliderRef}
-
-                    onMouseDown={handleMouseDown}
-                    onMouseLeave={handleMouseLeave}
-                    onMouseUp={handleMouseUp}
-                    onMouseMove={handleMouseMove}
-                >
+                <div className="committees-infos">
 
                     {committees.map((committee, index) => (
 
                         <div
-                            className={`committees-info ${committee.active
-                                    ? 'active'
-                                    : 'inactive'
-                                }`}
-
+                            className={`committees-info ${
+                                committee.active ? 'active' : 'inactive'
+                            }`}
                             key={index}
-
                             onClick={() => {
                                 if (committee.active) {
                                     navigate(committee.path)
@@ -151,7 +100,6 @@ function Committees() {
                                 )}
 
                             </div>
-
 
                             <div className="committees-info-title">
 

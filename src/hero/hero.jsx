@@ -65,8 +65,8 @@ function Hero() {
                         </h3>
 
                         <button>
-                            <Link to="/committees">
-                                <b>Explore</b>
+                            <Link to="/applications">
+                                <b>Apply now!</b>
                             </Link>
                         </button>
 

@@ -13,6 +13,8 @@ import Conference from './conference/conference'
 import Faq from './faq/faq'
 import Jcc from './committees/jcc/jcc'
 import Cabinet from './committees/cabinet/cabinet'
+import Applications from './applications/applications'
+import Fcc from './committees/fcc/fcc'
 
 function App() {
     return (
@@ -20,13 +22,14 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/applications" element={<Comingsoon />} />
+                <Route path="/applications" element={<Applications />} />
                 <Route path="/our-team" element={<Comingsoon />} />
                 <Route path="/committees" element={<Committees />} />
                 <Route path="/ecofin" element={<Ecofin />} />
                 <Route path="/unwomen" element={<Unwomen />} />
                 <Route path="/legal" element={<Legal />} />
                 <Route path="/ussc" element={<Ussc />} />
+                <Route path="/fcc" element={<Fcc />} />
                 <Route path="/jcc" element={<Jcc />} />
                 <Route path="/historicalnato" element={<Hnato />} />
                 <Route path="/hunsc" element={<Hunsc />} />

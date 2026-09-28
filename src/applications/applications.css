@@ -1,0 +1,367 @@
+.applications-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 9rem 5% 6rem;
+
+    /* Keep the shared purple grid from index.css visible. */
+    background: transparent;
+}
+
+.applications-header {
+    width: 100%;
+    max-width: 74rem;
+
+    margin-bottom: 3.5rem;
+
+    text-align: center;
+}
+
+.applications-eyebrow {
+    display: block;
+
+    margin-bottom: 0.8rem;
+
+    color: #b98bea;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+}
+
+.applications-header h1 {
+    margin: 0;
+
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        #6a3d91,
+        #b98bea,
+        #ffffff,
+        #b98bea,
+        #6a3d91
+    );
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5))
+        drop-shadow(0 0 12px rgba(124, 58, 237, 0.35));
+
+    animation: purpleGradient 4s ease-in-out infinite;
+}
+
+.applications-header p {
+    max-width: 34rem;
+
+    margin: 1.5rem auto 0;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.application-list {
+    width: 100%;
+    max-width: 74rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.25rem;
+}
+
+.application-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 14.5rem;
+
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: start;
+    align-content: center;
+
+    gap: 0.9rem;
+    padding: 1.55rem 1.7rem;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        rgba(8, 7, 11, 0.9),
+        rgba(16, 11, 21, 0.82)
+    );
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(185, 139, 234, 0.24);
+    border-radius: 24px;
+
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.application-card:last-child {
+    width: calc(50% - 0.625rem);
+
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.application-group-divider {
+    grid-column: 1 / -1;
+
+    height: 1px;
+
+    margin: 0.7rem 8%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(185, 139, 234, 0.38),
+        transparent
+    );
+}
+
+.application-card::before {
+    content: '';
+
+    position: absolute;
+    top: -7rem;
+    right: 10%;
+
+    width: 16rem;
+    height: 16rem;
+
+    border-radius: 50%;
+
+    background: rgba(139, 95, 191, 0.09);
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+.application-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(185, 139, 234, 0.7);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(124, 58, 237, 0.14);
+}
+
+.application-details,
+.application-action {
+    position: relative;
+    z-index: 1;
+}
+
+.application-details h2 {
+    margin: 0 0 0.55rem;
+
+    color: #ffffff;
+
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-weight: 600;
+}
+
+.application-details p {
+    max-width: 34rem;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.54);
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.application-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    padding-top: 0.8rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.application-fee {
+    min-width: 7.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.35rem;
+}
+
+.application-fee span {
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.application-fee strong {
+    color: #ffffff;
+
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.apply-button {
+    min-width: 7.5rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.55rem;
+    padding: 0.8rem 1.2rem;
+
+    color: #e8d9fa;
+    background: linear-gradient(
+        135deg,
+        rgba(106, 61, 145, 0.34),
+        rgba(139, 95, 191, 0.18)
+    );
+
+    border: 1px solid rgba(185, 139, 234, 0.42);
+    border-radius: 50px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.apply-button span {
+    font-size: 1rem;
+
+    transition: transform 0.3s ease;
+}
+
+.apply-button:hover {
+    transform: translateY(-3px);
+
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        rgba(106, 61, 145, 0.72),
+        rgba(139, 95, 191, 0.52)
+    );
+
+    border-color: rgba(185, 139, 234, 0.75);
+
+    box-shadow: 0 8px 24px rgba(139, 95, 191, 0.22);
+}
+
+.apply-button:hover span {
+    transform: translate(2px, -2px);
+}
+
+@media (max-width: 900px) {
+    .applications-page {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+}
+
+@media (max-width: 700px) {
+    .applications-page {
+        padding: 7.5rem 1rem 4rem;
+    }
+
+    .applications-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .applications-header p {
+        margin-top: 1rem;
+
+        font-size: 0.9rem;
+    }
+
+    .application-list {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    .application-card:last-child {
+        width: 100%;
+
+        grid-column: auto;
+    }
+
+    .application-group-divider {
+        grid-column: auto;
+
+        margin: 0.5rem 8%;
+    }
+
+    .application-card {
+        min-height: 0;
+
+        gap: 1.2rem;
+        padding: 1.5rem;
+
+        border-radius: 20px;
+    }
+
+    .application-details h2 {
+        font-size: 1.45rem;
+    }
+
+    .application-action {
+        align-items: flex-end;
+
+        gap: 1rem;
+    }
+
+    .application-fee {
+        min-width: 0;
+    }
+
+    .apply-button {
+        min-width: 8.5rem;
+
+        padding: 0.8rem 1.1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .application-action {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .apply-button {
+        width: 100%;
+    }
+}
