@@ -8,31 +8,26 @@ function Applications() {
         {
             title: 'Individual Delegate',
             description: 'Apply individually and take your place in one of our committees.',
-            fee: '₺1250',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScuOYGUrFNplZwnAbFJ_PUmzR5vhFNc3lkt1Ql2-uSqmhWsig/viewform'
         },
         {
             title: 'Delegation',
             description: 'Register your school delegation and experience the conference together.',
-            fee: '₺1150',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdyXIIThMGyWRuL2A35JwMCbw1U5h5NIcrJ22ssg6jGAwATjA/viewform'
         },
         {
             title: 'Chairboard Member',
             description: 'Lead committee debate and help delegates get the most from the conference.',
-            fee: '₺1050',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdjFPgovnxXXlJkicSPoN4OmQmvIjCiJy3RCZi48kw6BH5TwQ/viewform'
         },
         {
             title: 'Admin Member',
             description: 'Join the team that keeps every committee organized and running smoothly.',
-            fee: '₺1150',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScAAHLCsPc5IHpv9VphCwGH10cyBaw3-UArCKfbABGY_ZCg0A/viewform'
         },
         {
             title: 'Press',
             description: 'Capture the conference through photography, video, interviews, and news.',
-            fee: '₺1050',
             formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdBI_H7GiXepifhUi7Q4IhX7gBR4sXGmyDdO8MpDObJXS5XNA/viewform'
         }
     ]
@@ -58,10 +53,6 @@ function Applications() {
                                 </div>
 
                                 <div className="application-action">
-                                    <div className="application-fee">
-                                        <span>Application Fee</span>
-                                        <strong>{category.fee}</strong>
-                                    </div>
 
                                     <a
                                         href={category.formUrl}
@@ -71,7 +62,6 @@ function Applications() {
                                         aria-label={`Apply as ${category.title} (opens Google Forms)`}
                                     >
                                         Apply
-                                        <span aria-hidden="true">↗</span>
                                     </a>
                                 </div>
                             </article>
