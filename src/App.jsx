@@ -14,7 +14,7 @@ import Faq from './faq/faq'
 import Jcc from './committees/jcc/jcc'
 import Cabinet from './committees/cabinet/cabinet'
 import Fcc from './committees/fcc/fcc'
-import Later from './later/later'
+import Applications from './applications/applications'
 
 function App() {
     return (
@@ -22,7 +22,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/applications" element={<Later />} />
+                <Route path="/applications" element={<Applications />} />
                 <Route path="/our-team" element={<Comingsoon />} />
                 <Route path="/committees" element={<Committees />} />
                 <Route path="/ecofin" element={<Ecofin />} />
